@@ -32,3 +32,8 @@ const team =[
         picture: 'img/barbara-ramos-graphic-designer.jpg'
     },
 ];
+
+/* stampo proprietà di ogni oggetto */
+team.forEach((element)=>{
+    console.log(element.name,element.role,element.picture);
+});
