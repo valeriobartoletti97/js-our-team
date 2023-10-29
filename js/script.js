@@ -37,3 +37,30 @@ const team =[
 team.forEach((element)=>{
     console.log(element.name,element.role,element.picture);
 });
+
+/* appendo le card nel container */
+const cardContainer = document.getElementById('card-container');
+for (let i = 0; i < team.length; i++) {
+    cardContainer.append(teamMember(team[i]));
+};
+
+/* funzione genera-card */
+function teamMember(element) {
+    const teamMember = document.createElement('div');
+    teamMember.classList.add('col-4');
+    teamMember.classList.add('mb-3');
+    
+    let template =`
+    <div class="card">
+        <img src='${element.picture}' alt="${element.name}">
+        <div class="card-body text-center">
+            <h3 class="card-title">${element.name}</h3>
+            <div class="card-text">
+                ${element.role}
+            </div>
+        </div>
+    </div> 
+    `;
+    teamMember.innerHTML = template;
+    return teamMember;
+};
